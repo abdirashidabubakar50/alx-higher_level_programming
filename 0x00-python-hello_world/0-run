@@ -1,14 +1,2 @@
 #!/bin/bash
-
-if [ -z "$PYFILE" ]; then
-	echo "Error: The PYFILE environment variable is not set"
-	exit 1
-fi
-
-if [ ! -f "$PYFILE" ]; then
-	echo "Error: The specified Python 'PYFILE' does not exist"
-	exit 1
-fi
-
-echo "Running python script "PYFILE""
-python3 "$PYFILE"
+[ -z "$PYFILE" ] && echo "ERROR: the PYFILE environment variable is not set" && exit 1; [ ! -f "$PYFILE" ] && echo "ERROR: the PYFILE file does not exist" && exit 1 || python3 "$PYFILE"
