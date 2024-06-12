@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Check if PYFILE environment variable is set
+if [ -z "$PYFILE" ]; then
+    echo "Error: PYFILE environment variable is not set."
+    exit 1
+fi
+
+# Compile the Python script
+python3 -m compileall "$PYFILE"
+
+# Check if compilation was successful
+if [ $? -eq 0 ]; then
+    echo "Compiling $PYFILE ..."
+else
+    echo "Error: Failed to compile $PYFILE."
+    exit 1
+fi
+
+# Rename the compiled file to $PYFILEc
+mv "$PYFILE"c "$PYFILEc"
+
+# List files in the current directory
+ls -l
+
