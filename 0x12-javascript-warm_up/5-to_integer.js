@@ -1,8 +1,8 @@
 #!/usr/bin/node
-const args = process.argv.slice(2);
-const argsInt = parseInt(args[0], 10);
-if (isNaN(argsInt)) {
-  console.log('Not a number');
+const args = process.argv[2]
+const argsInt = Number(args);
+if (!isNaN(argsInt)) {
+  console.log('My number:', argsInt);
 } else {
-  console.log('My number :', args[0]);
+  console.log('Not a number');
 }
