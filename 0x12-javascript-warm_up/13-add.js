@@ -2,6 +2,4 @@
 function add (a, b) {
   return a + b;
 }
-
-// Export the function to make it visible from outside
-module.exports = add;
+module.exports = { add };
