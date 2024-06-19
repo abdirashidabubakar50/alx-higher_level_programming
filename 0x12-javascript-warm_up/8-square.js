@@ -6,7 +6,7 @@ if (isNaN(firstArgument)) {
   for (let i = 0; i < firstArgument; i++) {
     let line = '';
     for (let j = 0; j < firstArgument; j++) {
-      line += 'x';
+      line += 'X';
     }
     console.log(line);
   }
