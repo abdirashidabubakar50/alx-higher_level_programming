@@ -8,5 +8,5 @@ if (args.length < 3) {
 }
 const fileA = fs.readFileSync(args[0], 'utf8');
 const fileB = fs.readFileSync(args[1], 'utf8');
-const concatenated = fileA + '\n' + fileB + '\n';
+const concatenated = fileA + fileB;
 fs.writeFileSync(args[2], concatenated);
