@@ -32,11 +32,11 @@ if __name__ == "__main__":
             ORDER BY cities.id ASC
 
             """
-    cur.execute(query,(state_name,))
+    cur.execute(query, (state_name,))
 
     rows = cur.fetchall()
     unique_cities = list(set(rows))
-    
+
     cities = []
     for row in unique_cities:
         cities.append(row[0])
