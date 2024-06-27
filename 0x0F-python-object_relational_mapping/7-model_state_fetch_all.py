@@ -19,7 +19,9 @@ if __name__ == "__main__":
     # create an engine and connect to the MySQL database
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         username, password, db_name
-        ), pool_pre_ping=True)
+        ), pool_pre_ping=True, connect_args={
+            'autocommit': True, 'ssl': {'ssl-mode': 'DISABLED'}
+            })
     Base.metadata.create_all(engine)
 
     # create a configured session class
