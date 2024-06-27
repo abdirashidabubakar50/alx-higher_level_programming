@@ -3,7 +3,7 @@
 This script lists all state objects from the database hbtn_e_6_usa.
 
 """
-import sys
+from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
@@ -12,16 +12,14 @@ from model_state import Base, State
 if __name__ == "__main__":
 
     # extract arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
+    username = argv[1]
+    password = argv[2]
+    db_name = argv[3]
 
     # create an engine and connect to the MySQL database
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         username, password, db_name
-        ), pool_pre_ping=True, connect_args={
-            'autocommit': True, 'ssl': {'ssl-mode': 'DISABLED'}
-            })
+        ), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     # create a configured session class
