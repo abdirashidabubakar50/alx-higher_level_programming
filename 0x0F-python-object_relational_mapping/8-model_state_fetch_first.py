@@ -10,10 +10,12 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 if __name__ == "__main__":
-
+    username = argv[1]
+    password = argv[2]
+    db_name = argv[3]
     # create an engine and connect to the MySQL database
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        argv[1], argv[2], argv[3]
+        username, password, db_name
         ), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
