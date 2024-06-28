@@ -19,7 +19,7 @@ if __name__ == "__main__":
     session = Session()
 
     state_a = session.query(State).filter(
-            State.name.like('%a%')).order_by(State.id).all()
+            State.name.like('%a%')).all()
 
     for state in state_a:
         session.delete(state)
