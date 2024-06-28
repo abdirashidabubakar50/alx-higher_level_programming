@@ -19,8 +19,6 @@ if __name__ == "__main__":
     session = Session()
     Cities = session.query(City).join(State).order_by(City.id).all()
 
-    print("number of cities found:", len(Cities))
-
     for city in Cities:
         print("{}: ({}) {}".format(city.state.name, city.id, city.name))
 
