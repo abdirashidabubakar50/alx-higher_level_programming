@@ -22,6 +22,6 @@ if __name__ == "__main__":
     print("number of cities found:", len(Cities))
 
     for city in Cities:
-        print("{}: {} {}".format(city.state.name, city.id, city.name))
+        print("{}: ({}) {}".format(city.state.name, city.id, city.name))
 
     session.close()
