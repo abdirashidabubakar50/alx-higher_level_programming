@@ -54,7 +54,8 @@ class Square:
 
     def my_print(self):
         """
-        
+        Prints the square with the character #.
+        If the size is equal to 0, it prints an empty line.
         """
         if self.__size == 0:
             print()
