@@ -18,3 +18,13 @@ TypeError: b must be an integer
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+>>> import math
+>>> add_integer(1.79e308, 1.79e308)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+>>> try:
+...     add_integer(1.79e308, 1.79e308)
+... except OverflowError as e:
+...     print(e)
+cannot convert float infinity to integer
