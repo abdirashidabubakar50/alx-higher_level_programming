@@ -5,8 +5,13 @@ with the character #
 
 """
 
-
 def print_square(size):
+    """
+    This function prints a square
+
+    args:
+        size: size of the square
+    """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
