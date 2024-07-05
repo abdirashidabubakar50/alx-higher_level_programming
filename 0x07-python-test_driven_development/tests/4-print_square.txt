@@ -48,4 +48,7 @@ TypeError: size must be an integer
 ##########
 ##########
 ##########
->>>
+>>> print_square()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: print_square() missing 1 required positional argument: 'size'
