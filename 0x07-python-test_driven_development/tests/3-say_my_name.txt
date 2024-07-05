@@ -1,0 +1,18 @@
+# Prints the full name by combining the first and last name
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("Abdirashid", "Abubakar")
+My name is Abdirashid Abubakar
+>>> say_my_name(12344, "Abubakar")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/mnt/c/Users/Administrator/OneDrive/Documents/Main_Code_Base/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 20, in say_my_name
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+>>> say_my_name("Abdirashid", 23123)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/mnt/c/Users/Administrator/OneDrive/Documents/Main_Code_Base/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 22, in say_my_name   
+    raise TypeError("last_name must be a string")
+TypeError: last_name must be a string
+>>> say_my_name(first_name="John", last_name="Doe")
+My name is John Doe
