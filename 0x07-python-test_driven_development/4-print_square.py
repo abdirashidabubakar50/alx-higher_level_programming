@@ -5,6 +5,7 @@ with the character #
 
 """
 
+
 def print_square(size):
     """
     This function prints a square
