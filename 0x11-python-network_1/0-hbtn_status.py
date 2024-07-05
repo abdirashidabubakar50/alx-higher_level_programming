@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import urllib.request
-with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
+url = "https://alx-intranet.hbtn.io/status"
+with urllib.request.urlopen(url) as response:
     html = response.read()
 
 print("Body response:")
