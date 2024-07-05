@@ -1,4 +1,4 @@
-#!/usr/bon/python3
+#!/usr/bin/python3
 """
 This module defines a function that prints My name is <first name> <last name>
 
