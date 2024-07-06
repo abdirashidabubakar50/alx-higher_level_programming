@@ -16,7 +16,7 @@ def matrix_mul(m_a, m_b):
     Raises:
         TypeError: If m_a or m_b is not a list, or the elements of the lists
                    are not lists of integers or floats.
-        ValueError: If m_a or m_b is empty, or if 
+        ValueError: If m_a or m_b is empty, or if
                     the matrices cannot be multiplied.
     """
     if not isinstance(m_a, list):
