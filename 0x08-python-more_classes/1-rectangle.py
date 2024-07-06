@@ -11,7 +11,7 @@ class Rectangle:
         Args:
             width: The width of the rectangle
         """
-        self.__width = width
+        self.width = width
         self.height = height
 
     @property
