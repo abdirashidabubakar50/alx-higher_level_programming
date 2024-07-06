@@ -41,4 +41,22 @@ Traceback (most recent call last):
   File "/mnt/c/Users/Administrator/OneDrive/Documents/Main_Code_Base/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 31, in matrix_mul
     raise TypeError("m_b must be a list of lists")
 TypeError: m_b must be a list of lists
+>>> matrix_mul([[1, 2], [3, 4]], "string")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/mnt/c/Users/Administrator/OneDrive/Documents/Main_Code_Base/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 25, in matrix_mul
+    raise TypeError("m_b must be a list")
+TypeError: m_b must be a list
+>>> matrix_mul([1, 2, 3], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/mnt/c/Users/Administrator/OneDrive/Documents/Main_Code_Base/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 28, in matrix_mul
+    raise TypeError("m_a must be a list of lists")
+TypeError: m_a must be a list of lists
+>>> matrix_mul("string", [[1, 2], [3, 4]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/mnt/c/Users/Administrator/OneDrive/Documents/Main_Code_Base/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 23, in matrix_mul
+    raise TypeError("m_a must be a list")
+TypeError: m_a must be a list
 >>>
