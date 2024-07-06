@@ -4,4 +4,8 @@
 
 
 class Rectangle:
+    """
+    This class defines a simple rectangle
+    currently, this class doesn't define any proerties or methods
+    """
     pass
