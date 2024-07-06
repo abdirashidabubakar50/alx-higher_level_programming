@@ -40,7 +40,7 @@ def matrix_mul(m_a, m_b):
     for row in m_b:
         for element in row:
             if not isinstance(element, (int, float)):
-                raise TypeError("m_b should contain only intgers or floats")
+                raise TypeError("m_b should contain only integers or floats")
     size_m_a = len(m_a[0])
     for row in m_a:
         if (len(row) != size_m_a):
