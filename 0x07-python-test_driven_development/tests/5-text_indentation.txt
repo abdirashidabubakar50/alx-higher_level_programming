@@ -1,0 +1,27 @@
+# Prints a text with 2 new lines after each of these characters: ., ? and :
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello. How are you? I am fine: thank you.")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+I am fine:
+<BLANKLINE>
+thank you.
+<BLANKLINE>
+
+>>> text_indentation("This is a test: does it work? Yes, it does.")
+This is a test:
+<BLANKLINE>
+does it work?
+<BLANKLINE>
+Yes, it does.
+<BLANKLINE>
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation("")
+>>>
