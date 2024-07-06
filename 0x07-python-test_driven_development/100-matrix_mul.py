@@ -14,9 +14,10 @@ def matrix_mul(m_a, m_b):
         A new matrix that is the product of m_a and m_b.
 
     Raises:
-        TypeError: If m_a or m_b is not a list, or if the elements of the lists
+        TypeError: If m_a or m_b is not a list, or the elements of the lists
                    are not lists of integers or floats.
-        ValueError: If m_a or m_b is empty, or if the matrices cannot be multiplied.
+        ValueError: If m_a or m_b is empty, or if 
+                    the matrices cannot be multiplied.
     """
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
@@ -39,20 +40,20 @@ def matrix_mul(m_a, m_b):
     for row in m_b:
         for element in row:
             if not isinstance(element, (int, float)):
-                raise TypeError("m_b should only contain intgers or floats")
+                raise TypeError("m_b should contain only intgers or floats")
     size_m_a = len(m_a[0])
     for row in m_a:
         if (len(row) != size_m_a):
             raise TypeError("each row of m_a must be of the same size")
-    
+
     size_m_b = len(m_b[0])
     for row in m_b:
         if (len(row) != size_m_b):
             raise TypeError("each row of m_b must be of the same size")
-    
+
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
-    
+
     result = []
     for i in range(len(m_a)):
         result_row = []
