@@ -4,6 +4,20 @@
 
 
 def matrix_mul(m_a, m_b):
+    """Multiplies two matrices m_a and m_b.
+
+    Args:
+        m_a: The first matrix.
+        m_b: The second matrix.
+
+    Returns:
+        A new matrix that is the product of m_a and m_b.
+
+    Raises:
+        TypeError: If m_a or m_b is not a list, or if the elements of the lists
+                   are not lists of integers or floats.
+        ValueError: If m_a or m_b is empty, or if the matrices cannot be multiplied.
+    """
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
