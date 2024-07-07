@@ -71,9 +71,10 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
 
+        symbol = str(getattr(self, 'print_symbol', Rectangle.print_symbol))
         rect_lines = []
         for _ in range(self.height):
-            rect_lines.append(str(Rectangle.print_symbol) * self.__width)
+            rect_lines.append(symbol * self.__width)
 
         return "\n".join(rect_lines)
 
