@@ -4,8 +4,11 @@ the object is exactly the instance of the specified class; otherwise
 return False
 """
 
+
 def is_same_class(obj, a_class):
-    """Returns True if the object is exactly an isntance of the specified class, 
+    """
+    Returns True if the object is exactly an isntance
+    of the specified class,
     otherwise false
 
     Args:
