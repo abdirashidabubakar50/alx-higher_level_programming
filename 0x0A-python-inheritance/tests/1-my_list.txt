@@ -11,7 +11,7 @@
 >>> my_list = MyList([])
 >>> my_list.print_sorted()
 []
->>>
+>>> my_list = MyList([3, 1, 4, 2, 5])
 >>> my_list.append(6)
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5, 6]

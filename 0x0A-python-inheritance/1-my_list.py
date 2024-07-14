@@ -4,7 +4,7 @@
 
 
 class MyList(list):
-    """This class has a public instance method that prints the list, 
+    """This class has a public instance method that prints the list,
      but sorted in ascending order """
 
     def print_sorted(self):
