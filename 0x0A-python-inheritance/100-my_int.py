@@ -12,9 +12,9 @@ class MyInt(int):
         override the equality operator (==) to behave as inequality (!=)
         """
         return int(self) != other
-    
+
     def __ne__(self, other):
         """
         override the inequality operator (!=) to behave as equality (==)
         """
-        return int(self) == other\
+        return int(self) == other
