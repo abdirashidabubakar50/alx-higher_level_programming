@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 import unittest
-Base = __import__('models/base.py').Base
+from models.base import Base
 
 class TestBase(unittest.TestCase):
-    def setup(self):
+    def setUp(self):
         """Reset the counter before each test"""
         Base._Base__nb_objects = 0
     
@@ -15,4 +15,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(instance1.id, 1)
         self.assertEqual(instance2.id, 2)
         self.assertEqual(instance3.id, 3)
-        
+
+if __name__ == '__main__':
+    unittest.main
