@@ -3,9 +3,6 @@ import unittest
 from models.base import Base
 
 class TestBase(unittest.TestCase):
-    def setUp(self):
-        """Reset the counter before each test"""
-        Base._Base__nb_objects = 0
     
     def test_auto_assign_id(self):
         """Test Automatic id assignment"""
