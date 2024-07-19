@@ -15,35 +15,37 @@ class Rectangle(Base):
         Initialization of the Rectangle instance
 
         Attributes:
-            width(int): The width of the Rectangle(private instance attribute)
-            height(int): The height of the Rectangle(private instance attribute)
+            width(int): The width of the Rectangle
+            height(int):The height of the Rectangle
+            x(int): the x coordinate of rectangle
+            y(int): they coordinate of rectangle
         """
         super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
-    
+
     @property
     def height(self):
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         self.__height = value
-    
+
     @property
     def width(self):
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         self.__width = value
-    
+
     @property
     def x(self):
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         self.__x = value
@@ -51,7 +53,7 @@ class Rectangle(Base):
     @property
     def y(self):
         return self.__y
-    
-    @x.setter
+
+    @y.setter
     def y(self, value):
         self.__y = value
