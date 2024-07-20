@@ -111,6 +111,14 @@ class TestRectangle(unittest.TestCase):
         self.rect1.update(89, 2, 3, 4, 5)
         self.assertEqual(self.rect1.y, 5)
 
+    def test_update_kwargs(self):
+        """Test the update method with kwargs."""
+        self.rect1.update(id=89, width=2, height=3, x=4, y=5)
+        self.assertEqual(self.rect1.id, 89)
+        self.assertEqual(self.rect1.width, 2)
+        self.assertEqual(self.rect1.height, 3)
+        self.assertEqual(self.rect1.x, 4)
+        self.assertEqual(self.rect1.y, 5)
 
 if __name__ == '__main__':
     unittest.main()
