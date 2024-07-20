@@ -20,7 +20,7 @@ class TestBase(unittest.TestCase):
 class TestRectangle(unittest.TestCase):
     def setUp(self):
         """Set up test cases."""
-        Base._Base__nb_objects = 0
+        Base._Base__nb_objects = 0  # Reset the counter for Base class
         self.rect1 = Rectangle(10, 2)
         self.rect2 = Rectangle(2, 10, 2, 2, 100)
 
@@ -33,33 +33,37 @@ class TestRectangle(unittest.TestCase):
         """Test the width attribute."""
         self.assertEqual(self.rect1.width, 10)
         with self.assertRaises(TypeError):
-            self.rect1.width = "10"
+            Rectangle("1", 2)  # width is not an integer
         with self.assertRaises(ValueError):
-            self.rect1.width = -10
+            Rectangle(-1, 2)  # width is negative
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)  # width is zero
 
     def test_height(self):
         """Test the height attribute."""
         self.assertEqual(self.rect1.height, 2)
         with self.assertRaises(TypeError):
-            self.rect1.height = "2"
+            Rectangle(1, "2")  # height is not an integer
         with self.assertRaises(ValueError):
-            self.rect1.height = -2
+            Rectangle(1, -2)  # height is negative
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)  # height is zero
 
     def test_x(self):
         """Test the x attribute."""
         self.assertEqual(self.rect2.x, 2)
         with self.assertRaises(TypeError):
-            self.rect1.x = "2"
+            Rectangle(1, 2, "3")  # x is not an integer
         with self.assertRaises(ValueError):
-            self.rect1.x = -2
+            Rectangle(1, 2, -3)  # x is negative
 
     def test_y(self):
         """Test the y attribute."""
         self.assertEqual(self.rect2.y, 2)
         with self.assertRaises(TypeError):
-            self.rect1.y = "2"
+            Rectangle(1, 2, 3, "4")  # y is not an integer
         with self.assertRaises(ValueError):
-            self.rect1.y = -2
+            Rectangle(1, 2, 3, -4)  # y is negative
 
     def test_area(self):
         """Test the area method."""
@@ -74,7 +78,25 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = output
         self.rect1.display()
         sys.stdout = sys.__stdout__
-        self.assertEqual(output.getvalue(), "##########\n##########\n")
+        expected_output = "\n".join(["#" * 10 for _ in range(2)]) + "\n"
+        self.assertEqual(output.getvalue(), expected_output)
+
+    def test_display_with_xy(self):
+        """Test the display method with x and y."""
+        import io
+        import sys
+        output = io.StringIO()
+        sys.stdout = output
+        rect = Rectangle(2, 2, 2, 2)
+        rect.display()
+        sys.stdout = sys.__stdout__
+        expected_output = "\n\n  ##\n  ##\n"
+        self.assertEqual(output.getvalue(), expected_output)
+
+    def test_str(self):
+        """Test the __str__ method."""
+        self.assertEqual(str(self.rect1), "[Rectangle] (1) 0/0 - 10/2")
+        self.assertEqual(str(self.rect2), "[Rectangle] (100) 2/2 - 2/10")
 
     def test_update(self):
         """Test the update method."""
@@ -88,6 +110,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rect1.x, 4)
         self.rect1.update(89, 2, 3, 4, 5)
         self.assertEqual(self.rect1.y, 5)
+
 
 if __name__ == '__main__':
     unittest.main()
