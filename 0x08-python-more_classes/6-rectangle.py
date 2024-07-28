@@ -6,6 +6,7 @@
 class Rectangle:
     """Defines a rectangle by its width and height with validation."""
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """"Initializes a new instance of the rectangle9private
@@ -72,7 +73,7 @@ class Rectangle:
 
         rect_lines = []
         for _ in range(self.height):
-            rect_lines.append("#" * self.__width)
+            rect_lines.append(str(Rectangle.print_symbol) * self.__width)
 
         return "\n".join(rect_lines)
 
