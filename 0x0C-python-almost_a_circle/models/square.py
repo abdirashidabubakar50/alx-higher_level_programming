@@ -39,3 +39,23 @@ class Square(Rectangle):
         """The string representation of square instance"""
         return ("[Square] ({}) {}/{} - {}"
                 .format(self.id, self.x, self.y, self.size))
+
+    def  update(self, *args, **kwargs):
+        """
+        updates the attributes of the  Rectangle instance
+
+        Arguments:
+            1st Argument: id attribute
+            2nd Argument: size
+            3rd Argument: x
+            4th Argument: y
+        """
+        if args and len(args) > 0:
+            attributes = ["id", "size", "x", "y"]
+            for i, value in enumerate(args):
+                if i < len(attributes):
+                    setattr(self, attributes[i], value)
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self,  key):
+                    setattr(self, key, value)
