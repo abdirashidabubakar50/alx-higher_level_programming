@@ -40,7 +40,7 @@ class Square(Rectangle):
         return ("[Square] ({}) {}/{} - {}"
                 .format(self.id, self.x, self.y, self.size))
 
-    def  update(self, *args, **kwargs):
+    def update(self, *args, **kwargs):
         """
         updates the attributes of the  Rectangle instance
 
