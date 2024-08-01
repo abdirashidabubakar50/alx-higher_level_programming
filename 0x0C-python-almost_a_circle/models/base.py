@@ -3,6 +3,7 @@
 This module defines a class Base
 """
 import json
+import os
 
 
 class Base:
@@ -41,7 +42,7 @@ class Base:
         Returns:
             str: JSON string representation of list_dictionaries
         """
-        if list_dictionaries is None:
+        if list_dictionaries is None or not list_dictionaries:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
@@ -68,7 +69,7 @@ class Base:
         """
         returns the list of the JSON string  representation json_string
         """
-        if json_string is None:
+        if json_string is None or json_string == "":
             return "[]"
         return json.loads(json_string)
 
@@ -78,3 +79,14 @@ class Base:
         dummy_instance = cls(1, 1)
         dummy_instance.update(**dictionary)
         return dummy_instance
+    
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        if not os.path.exists(filename):
+            return []
+        with open(filename, "r") as file:
+            json_string= file.read()
+            list_dicts = cls.from_json_string(json_string)
+            return [cls.create(**d) for d in list_dicts]
